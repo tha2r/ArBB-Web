@@ -1,0 +1,1 @@
+                        <li><a href="news-$s[id].html" title='On $s[date]'>$s[title]</a></li>

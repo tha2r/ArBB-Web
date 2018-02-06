@@ -1,0 +1,19 @@
+Options FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^section-([0-9][0-9]*).html(.*)$ download.php?action=section&id=$1&$2
+RewriteRule ^doc-([0-9][0-9]*).html(.*)$ docs.php?id=$1&$2
+RewriteRule ^contact-send.html(.*)$  pages.php?page=contact&do=send&$1
+
+RewriteRule ^file-([0-9][0-9]*).html(.*)$ download.php?action=download&id=$1&$2
+
+RewriteRule ^p([0-9][0-9]*)_section-([0-9][0-9]*).html(.*)$ download.php?action=section&id=$2&page=$1
+
+RewriteRule ^(news|download)-([0-9][0-9]*).html(.*)$ $1.php?action=view&id=$2&$3
+
+RewriteRule ^(index|news|download|docs|search).html(.*)$ $1.php?$2
+RewriteRule ^(about|services|contact|rss).html(.*)$ pages.php?page=$1
+
+RewriteRule ^(index|news|download|docs|search)-([a-z]*).html(.*)$ $1.php?do=$2&$2
+
+RewriteRule ^(newspage)-([0-9][0-9]*).html(.*)$ news.php?page=$2&$3
